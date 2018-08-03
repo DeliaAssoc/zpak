@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700,900");
 /*!
 Theme Name: Zip Pak
 Theme URI: http://underscores.me/
@@ -379,7 +380,7 @@ template {
 .constrain {
   display: block;
   padding: 0 10px;
-  max-width: 1024px;
+  max-width: 1200px;
   min-width: 320px;
   margin: 0 auto;
 }
