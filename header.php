@@ -26,34 +26,69 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'zpak' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$zpak_description = get_bloginfo( 'description', 'display' );
-			if ( $zpak_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $zpak_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+		<div class="top-header">
+			<div class="constrain">
+				<div class="flexxed">
+					<div class="th-left flexxed">
+						<div class="thl-item phone">
+							<i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:<?php echo get_theme_mod( 'theme_company_tollfree' ); ?>"><?php echo get_theme_mod( 'theme_company_tollfree' ); ?></a>
+						</div>
+						<div class="thl-item blog">
+							<i class="fa fa-file-text-o" aria-hidden="true"></i> <a href="">News & Events</a>
+						</div>
+						<div class="thl-item careers">
+							<i class="fa fa-user" aria-hidden="true"></i> <a href="">Careers</a>
+						</div>
+						<div class="thl-item social">
+							<div class="flexxed">
+								<?php social_media_list(); ?>
+							</div>
+						</div>
+					</div>
+					<div class="search">
+						<?php get_search_form(); ?>
+					</div>
+					<div class="th-right flexxed">
+						<div class="thr-item worldwide-link">
+							<a href="">
+								<i class="fa fa-globe" aria-hidden="true"></i> Zip-Pak Worldwide
+							</a>
+						</div>
+						<div class="thr-item language">
+							<?php if ( is_active_sidebar( 'header_language' ) ) : ?>
+								<ul class="language-options">
+									<?php dynamic_sidebar( 'header_language' ); ?>
+								</ul>
+							<?php endif; ?> 
+						</div>
+					</div>
+				</div>
+				<div class="see-more">
+					<a href="#"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></a>
+				</div>
+			</div>
+		</div><!-- .top-header -->
+		<div class="main-header">
+			<div class="constrain">
+				<div class="flexxed">
+					<div class="site-branding">
+						<a href="/" class="site-logo">
+							<img src="<?php echo get_theme_mod( 'theme_logo' ); ?>" alt="">
+						</a>
+					</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'zpak' ); ?></button>
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-			) );
-			?>
-		</nav><!-- #site-navigation -->
+					<nav id="site-navigation" class="main-navigation">
+						<?php
+							wp_nav_menu( array(
+								'theme_location' => 'menu-1',
+								'menu_id'        => 'primary-menu',
+							) );
+						?>
+					</nav><!-- #site-navigation -->
+				</div>
+			</div>
+		</div><!-- .main-header -->
+		
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

@@ -1,49 +1,59 @@
 $( document ).ready( function() {
 
 	// VARIABLES
-	$modal = $( '.modal-search-window' ),
-	$modalClose = $( '.modal-search-window .close' ),
-	$mobSearch = $( 'a.mobile-search' ),
-	$dsktpSearch = $( 'a.dsktp-search' ),
-	$modalVidBtn = $( '.see-how-we-work' ),
-	$modalVid = $( '.modal-video-window' ),
-	$ModalVidClose = $( '.modal-video-window .close' ),
-	$headerHeight = $( '.site-header' ).height(),
-	$siteCont = $( '.content-area' ),
-	$tb = $( '.team-block' );
+	$sh = $( '.site-header' ),
+	$shHeight = $sh.outerHeight(),
+	$th = $( '.top-header' ),
+	$thTop = $th.css( 'top' ),
+	$thHeight = $th.outerHeight(),
+	$thSocial = $th.find( '.social' ),
+	$mhHeight = $( '.main-header' ).outerHeight( true ),
+	$thSeeMore = $th.find( '.see-more a' ),
+	$sContent = $( '.site-content' );
 
-	$siteCont.css( 'paddingTop', $headerHeight - 5 );
+	console.log( $thTop );
 
-	// OPEN/CLOSE MOBILE SEARCH
-	$mobSearch.on( 'click', function( e ){
-
-		e.preventDefault();
-		$modal.fadeIn();
-
-	});
-
-	$dsktpSearch.on( 'click', function( e ){
+	// TOP HEADER
+	$thSeeMore.on( 'click', function( e ){
 
 		e.preventDefault();
-		$modal.fadeIn();
+
+		if ( $th.hasClass( 'open' ) ) {
+			$th.removeClass( 'open' );
+			$th.css( 'top', $thTop );
+		} else {
+			$th.addClass( 'open' );
+			$th.css( 'top', 0 );
+		}
 
 	});
 
-	( $modalClose ).on( 'click', function( e ){
-		$modal.fadeOut();
-	});
+	$th.find( 'input[type=submit]' ).after( '<i class="fa fa-search" aria-hidden="true"></i>' );
+
+	// SITE CONTENT OFFSET
+	if ( $( window ).outerWidth() < 1024 ) {
+
+		$sContent.css( 'paddingTop', $mhHeight );
+
+	} else {
+		$sContent.css( 'paddingTop', $shHeight );
+	}
+
+	// SET SOCIAL CONTAINER DEPENDING ON TOTAL SOCIAL ITEMS
+	$socialCount = $thSocial.find( 'a' ).length;
+	$thSocial.css( 'width',  25 * $socialCount );
 
 	// OPEN/CLOSE VIDEO MODAL
-	$modalVidBtn.on( 'click', function( e ){
+	// $modalVidBtn.on( 'click', function( e ){
 
-		e.preventDefault();
-		$modalVid.fadeIn();
+	// 	e.preventDefault();
+	// 	$modalVid.fadeIn();
 
-	});
+	// });
 
-	( $ModalVidClose ).on( 'click', function( e ){
-		$modalVid.fadeOut();
-	});
+	// ( $ModalVidClose ).on( 'click', function( e ){
+	// 	$modalVid.fadeOut();
+	// });
 
 	// OPEN SEARCH FORM
 	// $( 'a.search' ).on( 'click', function( e ){
@@ -63,44 +73,33 @@ $( document ).ready( function() {
 	});
 
 	// CLIENT MODULE SLIDER
-	$( '.client-slider' ).slick({
-		slidesToShow: 4,
-		slideToScroll: 4,
-		responsive: [
-			{
-				breakpoint: 959,
-				settings: {
-					slidesToShow: 2,
-					slideToScroll: 2,
-					arrows: false
-				}
-			},
-			{
-				breakpoint: 567,
-				settings: {
-					slidesToShow: 1,
-					slideToScroll: 1,
-					arrows: false
-				}
-			}
-		]
-	});
+	// $( '.client-slider' ).slick({
+	// 	slidesToShow: 4,
+	// 	slideToScroll: 4,
+	// 	responsive: [
+	// 		{
+	// 			breakpoint: 959,
+	// 			settings: {
+	// 				slidesToShow: 2,
+	// 				slideToScroll: 2,
+	// 				arrows: false
+	// 			}
+	// 		},
+	// 		{
+	// 			breakpoint: 567,
+	// 			settings: {
+	// 				slidesToShow: 1,
+	// 				slideToScroll: 1,
+	// 				arrows: false
+	// 			}
+	// 		}
+	// 	]
+	// });
 
 	// TESTIMONIALS MODULE SLIDER
 	$( '.testimonial-slider' ).slick({
 		arrows: false,
 		dots: true
-	});
-
-	// TEAM BLOCK FUNCTIONALITY
-	$tb.find( 'a.bio-btn' ).on( 'click', function( e ){
-		e.preventDefault();
-		$( this ).closest( '.team-block' ).find( '.team-bio-block' ).addClass( 'active' )
-	});
-
-	$( '.team-bio-block' ).find( '.close-bio' ).on( 'click', function( e ){
-		e.preventDefault();
-		$( this ).closest( '.team-bio-block' ).removeClass( 'active' );
 	});
 
 	// Smooth Scroll for Back To Top Button *Thank you CSS-TRICKS*
@@ -116,7 +115,5 @@ $( document ).ready( function() {
 			}
 		}
 	});
-
-
 });
 

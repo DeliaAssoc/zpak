@@ -103,18 +103,18 @@ add_action( 'after_setup_theme', 'zpak_content_width', 0 );
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function zpak_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'zpak' ),
-		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'zpak' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+// Register Sidebars
+function custom_sidebars() {
+
+	$args = array(
+		'id'            => 'header_language',
+		'class'         => 'language-switcher',
+		'name'          => __( 'Language Switcher', 'text_domain' ),
+	);
+	register_sidebar( $args );
+
 }
-add_action( 'widgets_init', 'zpak_widgets_init' );
+add_action( 'widgets_init', 'custom_sidebars' );
 
 /**
  * Enqueue scripts and styles.
@@ -132,6 +132,8 @@ function zpak_scripts() {
 	wp_enqueue_style( 'zpak-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'zpak-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+
+	wp_enqueue_script( 'dae-custom', get_template_directory_uri() . '/js/custom.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'zpak-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
@@ -172,3 +174,17 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * Hide admin Bar
  */
 show_admin_bar(false);
+
+if( function_exists('acf_add_options_page') ) {
+
+	acf_add_options_page(array(
+		'page_title' 	=> 'Theme Options',
+		'menu_title'	=> 'Theme Options',
+		'menu_slug' 	=> 'modules-settings',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false,
+		'icon_url'		=> 'dashicons-star-filled',
+		'position'		=> 5
+	));
+
+}
