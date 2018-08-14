@@ -28,7 +28,11 @@ $( document ).ready( function() {
 
 	});
 
+
+
 	$th.find( 'input[type=submit]' ).after( '<i class="fa fa-search" aria-hidden="true"></i>' );
+
+
 
 	// SITE CONTENT OFFSET
 	if ( $( window ).outerWidth() < 1024 ) {
@@ -39,10 +43,119 @@ $( document ).ready( function() {
 		$sContent.css( 'paddingTop', $shHeight );
 	}
 
+
+
 	// SET SOCIAL CONTAINER DEPENDING ON TOTAL SOCIAL ITEMS
 	$socialCount = $thSocial.find( 'a' ).length;
 	$thSocial.css( 'width',  25 * $socialCount );
 
+
+
+	// HOME PAGE SLIDER
+	$( '.hero-slider' ).slick({
+		responsive: [
+			{
+				breakpoint: 960,
+				settings: {
+					arrows: true
+				}
+			}
+		]
+	});
+
+
+	// TABBED CONTENT
+	$( '.select-tabs a:first-of-type' ).addClass( 'selected' );
+	$( '.tabbed-content .tab-content:first-of-type' ).addClass( 'open' );
+
+	$( '.select-tabs a' ).on( 'click', function( e ) {
+
+		e.preventDefault();
+
+		$tbdAnchs = $( '.select-tabs a' ),
+		$clicked = $( this ),
+		$curTab = $clicked.data( 'ref' ),
+		$allTabs = $( '.tabbed-content' ).find( '.tab-content' ),
+		$selectedTab = $( '.tabbed-content' ).find( '#' + $curTab );
+
+		if ( !$selectedTab.hasClass( '.open' ) ) {
+	
+			// Remove active from all tabs
+			$tbdAnchs.removeClass( 'selected' );
+		
+			// Add selected to clicked tab
+			$clicked.addClass( 'selected' );
+			
+			// Hide all tab content
+			$allTabs.removeClass( 'open' );
+			
+			// Display selected tab content
+			$selectedTab.addClass( 'open' );
+			
+		} 
+	});
+
+	
+	// TESTIMONIALS MODULE SLIDER
+	$( '.product-slider' ).slick({
+		arrows: false,
+		dots: true,
+		slidesToShow: 5,
+		slidesToScroll: 5,
+		responsive: [
+			{
+				breakpoint: 1200,
+				settings: {
+					slidesToShow: 4,
+					slideToScroll: 4
+				}
+			},
+			{
+				breakpoint: 960,
+				settings: {
+					slidesToShow: 3,
+					slideToScroll: 3
+				}
+			},
+			{
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 2,
+					slideToScroll: 2
+				}
+			},
+			{
+				breakpoint: 480,
+				settings: {
+					dots: false,
+					slidesToShow: 1,
+					slideToScroll: 1
+				}
+			}
+		]
+	});
+
+
+
+
+	if ( $( window ).outerWidth() > 767 ) {
+		
+		// SUCCESS SLIDER
+		$( '.success-slider' ).slick({
+			arrows: false,
+			autoplay: true,
+			autoplaySpeed: 4500
+		}, console.log('Iam working') );
+
+	}
+
+
+	
+	// TESTIMONIALS SLIDER
+	$( '.testimonial-slider' ).slick({
+		arrows: false,
+		dots: true
+	});
 	// OPEN/CLOSE VIDEO MODAL
 	// $modalVidBtn.on( 'click', function( e ){
 
@@ -67,40 +180,8 @@ $( document ).ready( function() {
 	// 		}
 	// });
 
-	// DEFAULT PAGE SLIDER
-	$( '.hero-slider' ).slick({
-		arrows: false
-	});
 
-	// CLIENT MODULE SLIDER
-	// $( '.client-slider' ).slick({
-	// 	slidesToShow: 4,
-	// 	slideToScroll: 4,
-	// 	responsive: [
-	// 		{
-	// 			breakpoint: 959,
-	// 			settings: {
-	// 				slidesToShow: 2,
-	// 				slideToScroll: 2,
-	// 				arrows: false
-	// 			}
-	// 		},
-	// 		{
-	// 			breakpoint: 567,
-	// 			settings: {
-	// 				slidesToShow: 1,
-	// 				slideToScroll: 1,
-	// 				arrows: false
-	// 			}
-	// 		}
-	// 	]
-	// });
 
-	// TESTIMONIALS MODULE SLIDER
-	$( '.testimonial-slider' ).slick({
-		arrows: false,
-		dots: true
-	});
 
 	// Smooth Scroll for Back To Top Button *Thank you CSS-TRICKS*
 	$('a[href*="#"]:not([href="#"])').click(function() {

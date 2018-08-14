@@ -16,6 +16,12 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<style>
+		/* Stops content flash on load */
+		.hero-slider {
+			display: none;
+		}
+	</style>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/slick.min.js"></script>
 	<?php wp_head(); ?>
@@ -37,7 +43,7 @@
 							<i class="fa fa-file-text-o" aria-hidden="true"></i> <a href="">News & Events</a>
 						</div>
 						<div class="thl-item careers">
-							<i class="fa fa-user" aria-hidden="true"></i> <a href="">Careers</a>
+							<i class="fa fa-user" aria-hidden="true"></i> <a href="/careers">Careers</a>
 						</div>
 						<div class="thl-item social">
 							<div class="flexxed">
