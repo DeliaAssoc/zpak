@@ -18,7 +18,7 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<style>
 		/* Stops content flash on load */
-		.hero-slider {
+		.hero-slider, .product-slider {
 			display: none;
 		}
 	</style>

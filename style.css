@@ -894,6 +894,7 @@ a:hover, a:active {
   color: #e1213d;
   content: '\f107';
   font-family: "FontAwesome", sans-serif;
+  padding: 0 0 0 10px;
   position: absolute;
   right: -15px;
   top: -2px;
@@ -948,7 +949,7 @@ a:hover, a:active {
   padding: 10px 0 0;
   position: absolute;
   text-align: center;
-  top: -253px;
+  top: -259px;
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
   -ms-transition: all 0.4s ease-in-out;
@@ -1042,11 +1043,15 @@ a:hover, a:active {
 .th-right .language li {
   list-style-type: none;
 }
+.th-right .worldwide-link {
+  margin: 0 auto;
+}
 
 .worldwide-link a {
   background-color: #e1213d;
   color: #FFFFFF;
-  padding: 2px 15px 1px 15px;
+  display: inline-block;
+  padding: 4px 15px 4px 15px;
 }
 .worldwide-link a:hover {
   color: #252525;
@@ -1084,7 +1089,7 @@ a:hover, a:active {
 # Content
 --------------------------------------------------------------*/
 .site-content {
-  padding: 10px 0;
+  padding: 10px 0 0 0;
 }
 
 .hero-slider {
@@ -1433,10 +1438,6 @@ div.market-tile:hover {
   display: block;
 }
 
-.hentry {
-  margin: 0 0 1.5em;
-}
-
 .updated:not(.published) {
   display: none;
 }
@@ -1568,6 +1569,133 @@ object {
   display: block;
 }
 
+footer {
+  overflow: hidden;
+}
+
+.main-footer {
+  background-color: #363636;
+  background-position: center center;
+  background-repeat: no-repeat;
+  color: #FFFFFF;
+}
+.main-footer .footer-logo {
+  margin: 0 0 20px 0;
+}
+.main-footer .footer-col {
+  margin: 0 0 20px 0;
+}
+.main-footer .footer-col:last-of-type {
+  margin: 0;
+}
+.main-footer .footer-contacts a {
+  color: #FFFFFF;
+  font-weight: 700;
+}
+.main-footer .footer-contacts a:hover {
+  color: #e1213d;
+}
+.main-footer .footer-contacts .worldwide-link a {
+  margin: 0 0 3px 0;
+}
+.main-footer .footer-contacts .worldwide-link a:hover {
+  color: #252525 !important;
+}
+.main-footer .footer-contacts .footer-phone,
+.main-footer .footer-contacts .footer-email {
+  margin: 0 0 7px 0;
+}
+.main-footer .footer-contacts .footer-phone i,
+.main-footer .footer-contacts .footer-email i {
+  color: #e1213d;
+  margin: 0 5px 0 0;
+}
+.main-footer .footer-social {
+  margin: 5px 0 0 0;
+}
+.main-footer .footer-social .flexxed {
+  flex-direction: row;
+}
+.main-footer .footer-social a {
+  color: #e1e1e1;
+  font-size: 20px;
+  margin: 0 10px 0 0;
+}
+.main-footer .menu a {
+  color: #e1e1e1;
+  display: inline-block;
+  padding: 0 0 0 5px;
+  position: relative;
+}
+.main-footer .menu a:hover {
+  color: #e1213d;
+}
+.main-footer .menu a:before {
+  color: #e1213d;
+  content: '\f105';
+  font-family: "FontAwesome", sans-serif;
+  left: -5px;
+  position: relative;
+}
+.main-footer .menu .top-level a {
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: 900;
+  margin: 10px 0 15px 0;
+  padding: 0 0 3px 0;
+  position: relative;
+  text-transform: uppercase;
+}
+.main-footer .menu .top-level a:before {
+  content: '';
+}
+.main-footer .menu .top-level a:after {
+  border-bottom: 3px solid #e1213d;
+  bottom: -5px;
+  content: '';
+  left: 0;
+  position: absolute;
+  width: 125px;
+}
+.main-footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.main-footer ul li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bottom-footer {
+  background-color: #707070;
+  color: #e1e1e1;
+  font-size: 13px;
+  padding: 5px 0;
+  text-align: center;
+}
+.bottom-footer a:hover {
+  color: #e1213d;
+}
+.bottom-footer a:hover:after {
+  color: #e1e1e1;
+}
+.bottom-footer a, .bottom-footer .copy {
+  color: #e1e1e1;
+  display: inline-block;
+  padding: 3px 5px;
+  position: relative;
+}
+.bottom-footer a:after, .bottom-footer .copy:after {
+  content: ' | ';
+  position: relative;
+  right: -5px;
+}
+.bottom-footer .copy:after {
+  content: '';
+}
+
 @media only screen and (min-width: 480px) {
   .tabbed-section a.tab-select {
     width: 48%;
@@ -1636,6 +1764,20 @@ object {
 
   a.product-tile {
     min-height: 395px;
+  }
+
+  .main-footer .constrain > .flexxed {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+  }
+  .main-footer .footer-col {
+    width: 45%;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -1983,6 +2125,10 @@ object {
 
   .hero-slider .slide-text {
     font-size: 22px;
+  }
+
+  .main-footer .footer-col {
+    width: 22%;
   }
 }
 @media only screen and (min-width: 1100px) {

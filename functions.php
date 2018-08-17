@@ -104,17 +104,63 @@ add_action( 'after_setup_theme', 'zpak_content_width', 0 );
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 // Register Sidebars
-function custom_sidebars() {
+function header_widgets() {
 
 	$args = array(
 		'id'            => 'header_language',
-		'class'         => 'language-switcher',
-		'name'          => __( 'Language Switcher', 'text_domain' ),
+		'class'         => 'header-language',
+		'name'          => __( 'Header Language', 'text_domain' ),
+		'description'   => __( 'Header Language Widget Area', 'text_domain' ),
+		'before_title'  => '',
+		'after_title'   => '',
+		'before_widget' => '<ul>',
+		'after_widget'  => '</ul>',
 	);
 	register_sidebar( $args );
 
 }
-add_action( 'widgets_init', 'custom_sidebars' );
+add_action( 'widgets_init', 'header_widgets' );
+
+function footer_columns() {
+
+	$args = array(
+		'id'            => 'column_1',
+		'class'         => 'column',
+		'name'          => __( 'Footer Column 1', 'text_domain' ),
+		'description'   => __( 'Widget Area for Column 1', 'text_domain' ),
+		'before_title'  => '',
+		'after_title'   => '',
+		'before_widget' => '<ul>',
+		'after_widget'  => '</ul>',
+	);
+	register_sidebar( $args );
+
+	$args = array(
+		'id'            => 'column_2',
+		'class'         => 'column',
+		'name'          => __( 'Footer Column 2', 'text_domain' ),
+		'description'   => __( 'Widget Area for Column 2', 'text_domain' ),
+		'before_title'  => '',
+		'after_title'   => '',
+		'before_widget' => '<ul>',
+		'after_widget'  => '</ul>',
+	);
+	register_sidebar( $args );
+
+	$args = array(
+		'id'            => 'column_3',
+		'class'         => 'column',
+		'name'          => __( 'Footer Column 3', 'text_domain' ),
+		'description'   => __( 'Widget Area for Column 3', 'text_domain' ),
+		'before_title'  => '',
+		'after_title'   => '',
+		'before_widget' => '<ul>',
+		'after_widget'  => '</ul>',
+	);
+	register_sidebar( $args );
+
+}
+add_action( 'widgets_init', 'footer_columns' );
 
 /**
  * Enqueue scripts and styles.

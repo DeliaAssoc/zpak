@@ -11,8 +11,6 @@ $( document ).ready( function() {
 	$thSeeMore = $th.find( '.see-more a' ),
 	$sContent = $( '.site-content' );
 
-	console.log( $thTop );
-
 	// TOP HEADER
 	$thSeeMore.on( 'click', function( e ){
 
@@ -53,11 +51,12 @@ $( document ).ready( function() {
 
 	// HOME PAGE SLIDER
 	$( '.hero-slider' ).slick({
+		arrows: true,
 		responsive: [
 			{
 				breakpoint: 960,
 				settings: {
-					arrows: true
+					arrows: false
 				}
 			}
 		]
@@ -145,8 +144,7 @@ $( document ).ready( function() {
 			arrows: false,
 			autoplay: true,
 			autoplaySpeed: 4500
-		}, console.log('Iam working') );
-
+		});
 	}
 
 
@@ -197,4 +195,3 @@ $( document ).ready( function() {
 		}
 	});
 });
-
