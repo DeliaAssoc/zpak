@@ -10,6 +10,10 @@ $( document ).ready( function() {
 	$mhHeight = $( '.main-header' ).outerHeight( true ),
 	$thSeeMore = $th.find( '.see-more a' ),
 	$sContent = $( '.site-content' );
+	
+
+
+
 
 	// TOP HEADER
 	$thSeeMore.on( 'click', function( e ){
@@ -26,6 +30,26 @@ $( document ).ready( function() {
 
 	});
 
+
+
+	changeMargin = function() {
+		$fheight = $( '.site-footer' ).height();
+		$sContent.css( 'marginBottom', $fheight );
+	}
+
+	// Get height of footer and add margin bottom to site-content
+	if ( $( window ).outerWidth() > 1023 ) {
+		changeMargin();
+	}
+
+	$( window ).resize( function() {
+		if ( $( window ).outerWidth() > 1023 ) {
+		
+			changeMargin();
+		} else {
+			$sContent.css( 'marginBottom', 'initial' );
+		}
+	});
 
 
 	$th.find( 'input[type=submit]' ).after( '<i class="fa fa-search" aria-hidden="true"></i>' );

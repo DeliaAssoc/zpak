@@ -941,7 +941,7 @@ a:hover, a:active {
   box-shadow: 1px 1px 7px 1px rgba(0, 0, 0, 0.07);
   position: fixed;
   width: 100%;
-  z-index: 1;
+  z-index: 99;
 }
 
 .top-header {
@@ -1089,7 +1089,10 @@ a:hover, a:active {
 # Content
 --------------------------------------------------------------*/
 .site-content {
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.35);
   padding: 10px 0 0 0;
+  position: relative;
+  z-index: 10;
 }
 
 .hero-slider {
@@ -1210,6 +1213,7 @@ a:hover, a:active {
 }
 
 .product-line-module {
+  background-color: #FFFFFF;
   padding: 20px 0;
 }
 .product-line-module h2 {
@@ -1334,6 +1338,7 @@ div.market-tile:hover {
 }
 
 .testimonials-slider-module {
+  background-color: #FFFFFF;
   text-align: center;
 }
 .testimonials-slider-module .title {
@@ -1570,6 +1575,7 @@ object {
 }
 
 footer {
+  display: block;
   overflow: hidden;
 }
 
@@ -1798,7 +1804,7 @@ footer {
   }
 
   .top-header {
-    top: -164px;
+    top: -169px;
   }
   .top-header .social {
     margin: initial;
@@ -2125,6 +2131,13 @@ footer {
 
   .hero-slider .slide-text {
     font-size: 22px;
+  }
+
+  .site-footer {
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 0;
   }
 
   .main-footer .footer-col {
