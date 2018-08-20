@@ -68,10 +68,18 @@
 		</div>
 		<div class="bottom-footer legal-info">
 			<div class="constrain">
-				<a href="">Terms and Conditions of Sale</a>
-				<a href="">Terms of Use</a>
-				<a href="">Privacy Policy</a>
-				<a href="">Cookies Notice</a>
+				<?php if ( get_theme_mod( 'theme_tacos_link' ) ) : ?>
+					<a href="<?php echo get_theme_mod( 'theme_tacos_link' ); ?>">Terms and Conditions of Sale</a>
+				<?php endif; ?>
+				<?php if ( get_theme_mod( 'theme_tou_link' ) ) : ?>
+					<a href="<?php echo get_theme_mod( 'theme_tou_link' ); ?>">Terms of Use</a>
+				<?php endif; ?>
+				<?php if ( get_theme_mod( 'theme_privacy_policy' ) ) : ?>
+					<a href="<?php echo get_theme_mod( 'theme_privacy_policy' ); ?>">Privacy Policy</a>
+				<?php endif; ?>
+				<?php if ( get_theme_mod( 'theme_cookies_link' ) ) : ?>
+					<a href="<?php echo get_theme_mod( 'theme_cookies_link' ); ?>">Cookies Notice</a>
+				<?php endif; ?>
 				<div class="copy">&copy; Copyright <?php echo date( 'Y' ); ?> Zip-Pak<sup>&reg;</sup></div>
 			</div>
 		</div>
