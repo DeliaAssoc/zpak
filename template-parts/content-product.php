@@ -12,6 +12,11 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<div class="entry-content">
+		<section class="breadcrumbs">
+			<div class="constrain">
+				<?php bcn_display(); ?>
+			</div>
+		</section>
 		<section class="intro-section product p45">
 			<div class="constrain flexxed">
 				<div class="intro-content-image">

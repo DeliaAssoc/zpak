@@ -38,12 +38,12 @@ $( document ).ready( function() {
 	}
 
 	// Get height of footer and add margin bottom to site-content
-	if ( $( window ).outerWidth() > 1023 ) {
+	if ( $( window ).outerWidth() > 1199 ) {
 		changeMargin();
 	}
 
 	$( window ).resize( function() {
-		if ( $( window ).outerWidth() > 1023 ) {
+		if ( $( window ).outerWidth() > 1199 ) {
 		
 			changeMargin();
 		} else {
