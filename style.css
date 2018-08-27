@@ -573,23 +573,6 @@ a.mdgray-brdr:visited {
   width: 150px;
 }
 
-.slick-dots {
-  bottom: -30px;
-}
-.slick-dots li {
-  margin: 0 3px;
-}
-.slick-dots li button:before {
-  font-size: 14px;
-  opacity: 0.25;
-}
-
-.slick-dots li.slick-active button:before {
-  color: #e1213d;
-  font-size: 19px;
-  opacity: 1;
-}
-
 .content-area ul li {
   list-style-type: none;
   margin: 0 0 5px 0;
@@ -602,7 +585,27 @@ a.mdgray-brdr:visited {
   font-family: "FontAwesome", sans-serif;
   left: 0;
   position: absolute;
-  top: -1;
+  top: -1px;
+}
+
+.slick-dots {
+  bottom: -30px;
+}
+.slick-dots li {
+  margin: 0 3px;
+}
+.slick-dots li:before {
+  content: '' !important;
+}
+.slick-dots li button:before {
+  font-size: 14px;
+  opacity: 0.25;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #e1213d;
+  font-size: 19px;
+  opacity: 1;
 }
 
 .breadcrumbs {
