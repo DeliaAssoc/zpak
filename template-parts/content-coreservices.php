@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying page content in core-markets.php
+ * Template part for displaying page content in core-services.php
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -34,22 +34,25 @@
 
 		</section>
 		
-		<?php if ( have_rows( 'markets' ) ) : ?>
-			<section class="core-markets p60" style="background-image: url( '<?php the_field( 'markets_background_image' ); ?>' );">
+		<?php if ( have_rows( 'services' ) ) : ?>
+			<section class="core-services p60">
 				<div class="module-intro underlined">
-					<h2><?php the_field( 'markets_content_title' ); ?></h2>
-					<div class="text"><?php the_field( 'markets_content_text' ); ?></div>
+					<h2><?php the_field( 'services_content_title' ); ?></h2>
+					<div class="text"><?php the_field( 'services_content_text' ); ?></div>
 				</div>
-				<div class="constrain flexxed">
+				<div class="constrain md flexxed">
 					
-					<?php while ( have_rows( 'markets' ) ) : the_row(); ?>
-						<a href="<?php the_sub_field( 'market_link' ); ?>" class="market-tile">
-							<div class="market-icon">
-								<?php $icon = get_sub_field( 'market_icon' ); ?>
+					<?php while ( have_rows( 'services' ) ) : the_row(); ?>
+						<a href="<?php the_sub_field( 'service_link' ); ?>" class="service-tile">
+							<div class="service-image">
+								<?php $icon = get_sub_field( 'service_image' ); ?>
                                 <img src="<?php echo $icon[ 'url' ]; ?>" alt="<?php echo $icon[ 'alt' ]; ?>">
-							</div>
-							<div class="market-title"><?php the_sub_field( 'market_title' ); ?> <i class="fa fa-chevron-right" aria-hidden="true"></i></div>
-						</a>
+                            </div>
+                            
+                            <h3 class="service-title"><?php the_sub_field( 'service_title' ); ?></h3>
+                            <div class="snippet"><?php the_sub_field( 'service_snippet' ); ?></div>
+                            <div class="btn btn-sm">Learn More <i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+                        </a>
 					<?php endwhile; ?>
 				</div>
 			</section>

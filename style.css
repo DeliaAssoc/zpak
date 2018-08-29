@@ -1241,11 +1241,16 @@ h1.module-intro.underlined.left:after {
   text-align: center;
 }
 
+.market-products .module-intro.intro-text {
+  margin: 0 0 30px 0;
+}
+
 .market-product-tile {
   background-color: #959595;
   box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.25);
   color: #FFFFFF;
   margin: 0 0 20px 0;
+  overflow: auto;
 }
 .market-product-tile:last-of-type {
   margin: 0;
@@ -1287,6 +1292,51 @@ h1.module-intro.underlined.left:after {
   color: #FFFFFF;
   margin: 20px 0 0 0;
   text-transform: none;
+}
+
+.core-services {
+  background-color: #e1e1e1;
+}
+.core-services .module-intro {
+  margin: 0 0 30px 0;
+}
+
+.service-tile {
+  background-color: #959595;
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.25);
+  color: #FFFFFF;
+  margin: 0 0 20px 0;
+  padding: 20px;
+}
+.service-tile:last-of-type {
+  margin: 0;
+}
+.service-tile .service-image {
+  margin: 0 0 10px 0;
+}
+.service-tile h3 {
+  position: relative;
+}
+.service-tile h3:after {
+  content: '';
+  border-bottom: 1px solid #252525;
+  bottom: -5px;
+  display: inline-block;
+  left: 0;
+  position: absolute;
+  width: 35%;
+}
+.service-tile .btn {
+  background-color: #707070;
+  display: inline-block;
+  margin: 20px 0 0 0;
+}
+.service-tile:hover {
+  background-color: #9c1f2e;
+  color: #FFFFFF;
+}
+.service-tile:hover > .btn {
+  background-color: #e1213d;
 }
 
 /*--------------------------------------------------------------
@@ -2009,6 +2059,29 @@ footer {
     padding: 0;
   }
 
+  .market-products .module-intro.intro-text {
+    margin: 0 0 40px 0;
+  }
+
+  .core-services .module-intro {
+    margin: 0 0 40px 0;
+  }
+  .core-services .flexxed {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+  .core-services .service-tile {
+    width: 48%;
+    margin: 0 0 25px 0;
+  }
+
   .main-footer .constrain > .flexxed {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -2247,6 +2320,10 @@ footer {
     margin: 30px 0 0 0;
   }
 
+  .market-products .module-intro.intro-text {
+    margin: 0 0 50px 0;
+  }
+
   .market-product-tile {
     margin: 0 0 30px 0;
     padding: 30px;
@@ -2269,6 +2346,14 @@ footer {
   }
   .mp-successstory .mp-ss-content {
     width: 49%;
+  }
+
+  .core-services .module-intro {
+    margin: 0 auto 50px auto;
+  }
+  .core-services .service-tile {
+    margin: 0 0 30px 0;
+    padding: 30px;
   }
 
   .half {
@@ -2493,6 +2578,10 @@ footer {
     width: 49%;
   }
 
+  .core-services .service-tile {
+    margin: 0 0 40px 0;
+  }
+
   .main-footer .footer-col {
     width: 22%;
   }
@@ -2658,5 +2747,9 @@ footer {
 
   .top-header .th-left .thl-item {
     width: 30%;
+  }
+
+  .quick-links a.quick-link {
+    display: inline-block;
   }
 }

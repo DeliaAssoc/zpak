@@ -42,7 +42,7 @@
                     <div class="module-intro underlined">
                         <h2><?php the_field( 'product_title' ); ?></h2>
                     </div>
-                    <div class="module-intro"><?php the_field( 'products_text_content' ); ?></div>
+                    <div class="module-intro intro-text"><?php the_field( 'products_text_content' ); ?></div>
                 </div>
                 <div class="constrain md">
                     <div class="pros flexxed">
