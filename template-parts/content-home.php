@@ -131,46 +131,25 @@
         </div>
     </section>
 
-    <section class="markets-module p60" style="background-image: url( '<?php the_field( 'markets_background_image', 'options' ); ?>' );">
+    <section class="markets-module p60" style="background-image: url( '<?php the_field( 'markets_background_image' ); ?>' );">
         <div class="constrain">
             <div class="module-intro underlined">
-                <h2><?php the_field( 'markets_module_title', 'options' ); ?></h2>
-                <div class="sub-title"><?php the_field( 'markets_module_subtitle', 'options' ); ?></div>
+                <h2><?php the_field( 'markets_content_title' ); ?></h2>
+                <div class="sub-title"><?php the_field( 'markets_content_text' ); ?></div>
             </div>
-            <?php
-                // WP_Query arguments
-                $args = array(
-                    'post_type'              => array( 'markets' ),
-                    'order'                  => 'DESC',
-                    'orderby'                => 'title',
-                );
-
-                // The Query
-                $mQuery = new WP_Query( $args );
-
-                // The Loop
-                if ( $mQuery->have_posts() ) { ?>
-                    <div class="flexxed">
-                        <?php while ( $mQuery->have_posts() ) : $mQuery->the_post(); ?>
-                        <a href="<?php the_permalink(); ?>" class="market-tile">
-                            <div class="market-icon">
-                                <?php the_post_thumbnail(); ?>
-                            </div>
-                            <div class="market-title"><?php the_title(); ?> <i class="fa fa-chevron-right" aria-hidden="true"></i></div>
-                        </a><!-- .market-tile -->
-                        <?php endwhile; ?>
-
-                        <?php if ( get_field( 'market_logo_placeholder', 'options' ) == 'yes' ) : ?>
-                            <div class="market-tile ziplogo">
-                                <?php $zLogo = get_field( 'marketplace_zip-pak_logo', 'options' ); ?>
-                                <img src="<?php echo $zLogo[ 'url' ]; ?>" alt="<?php echo $zLogo[ 'alt' ]; ?>">
-                            </div>
-                        <?php endif; ?>
-                    </div><!-- .flexxed -->
-                <?php } 
-                // Restore original Post Data
-                wp_reset_postdata();
-            ?>
+            <?php if ( have_rows( 'markets' ) ) : ?>
+                <div class="flexxed">
+                    <?php while ( have_rows( 'markets' ) ) : the_row(); ?>
+                    <a href="<?php the_sub_field( 'market_link' ); ?>" class="market-tile">
+                        <div class="market-icon">
+                            <?php $icon = get_sub_field( 'market_icon' ); ?>
+                            <img src="<?php echo $icon[ 'url' ]; ?>" alt="<?php echo $icon[ 'alt' ]; ?>">
+                        </div>
+                        <div class="market-title"><?php the_sub_field( 'market_title' ); ?> <i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+                    </a><!-- .market-tile -->
+                    <?php endwhile; ?>
+                </div><!-- .flexxed -->
+            <?php endif; ?>
         </div>
     </section>
 

@@ -62,6 +62,25 @@
 			endwhile;
 
 		endif; ?>
+
+		<?php if ( have_rows( 'quick_links_module', 'options' ) ) : ?>
+			<section class="quick-links flexxed">
+				<?php while ( have_rows( 'quick_links_module', 'options' ) ) : the_row(); ?>
+					<a href="<?php the_sub_field( 'quick_link_url', 'options' ); ?>" class="quick-link">
+						<div class="flexxed">
+							<div class="ql-icon">
+								<?php $qlIcon = get_sub_field( 'quick_link_icon', 'options' ); ?>
+								<img src="<?php echo $qlIcon[ 'url' ]; ?>" alt="<?php echo $qlIcon[ 'alt' ]; ?>">
+							</div>
+							<div class="ql-content">
+								<div class="title"><?php the_sub_field( 'quick_link_title', 'options' ); ?></div>
+								<div class="btn white-brdr">Learn More <i class="fa fa-angle-right" aria-hidden="true"></i></div>
+							</div>
+						</div>
+					</a>
+				<?php endwhile; ?>
+			</section>
+    	<?php endif; ?>
 	</div><!-- .entry-content -->
 
 </article><!-- #post-<?php the_ID(); ?> -->
