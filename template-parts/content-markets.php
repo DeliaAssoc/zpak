@@ -44,12 +44,12 @@
                     </div>
                     <div class="module-intro"><?php the_field( 'products_text_content' ); ?></div>
                 </div>
-                <div class="constrain">
+                <div class="constrain md">
                     <div class="pros flexxed">
                         <?php while ( have_rows( 'products' ) ) : the_row(); ?>
                             <div class="market-product-tile flexxed">
                                 <?php $mpImage = get_sub_field( 'product_image' ); ?>
-                                <img src="<?php echo $mpImage[ 'url' ]; ?>" alt="<?php echo $mpImage[ 'alt' ]; ?>" class="mpima">
+                                <img src="<?php echo $mpImage[ 'url' ]; ?>" alt="<?php echo $mpImage[ 'alt' ]; ?>" class="mpimage">
                                 <div class="mp-content">
                                     <h3><?php the_sub_field( 'product_name' ); ?></h3>
                                     <div class="snippet"><?php the_sub_field( 'product_snippet' ); ?></div>
