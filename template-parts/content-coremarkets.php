@@ -20,8 +20,8 @@
 
         <section class="cm-intro p60">
             <div class="constrain md">
-				<div class="module-intro underlined">
-					<h1><?php the_field( 'introduction_title' ); ?></h1>
+				<div class="module-intro">
+					<h1 class="underlined center" ><?php the_field( 'introduction_title' ); ?></h1>
 				</div>
 				<div class="intro-text">
 					<?php the_field( 'introduction_text' ); ?>
@@ -36,7 +36,7 @@
 		
 		<?php if ( have_rows( 'markets' ) ) : ?>
 			<section class="core-markets p60" style="background-image: url( '<?php the_field( 'markets_background_image' ); ?>' );">
-				<div class="module-intro underlined">
+				<div class="module-intro underlined center">
 					<h2><?php the_field( 'markets_content_title' ); ?></h2>
 					<div class="text"><?php the_field( 'markets_content_text' ); ?></div>
 				</div>

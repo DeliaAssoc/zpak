@@ -133,7 +133,7 @@
 
     <section class="markets-module p60" style="background-image: url( '<?php the_field( 'markets_background_image' ); ?>' );">
         <div class="constrain">
-            <div class="module-intro underlined">
+            <div class="module-intro underlined center">
                 <h2><?php the_field( 'markets_content_title' ); ?></h2>
                 <div class="sub-title"><?php the_field( 'markets_content_text' ); ?></div>
             </div>
@@ -155,7 +155,7 @@
 
     <section class="cta-module p60" style="background-image: url( '<?php the_field( 'cta_module_background_image', 'options' ); ?>' );">
         <div class="constrain">
-            <div class="module-intro underlined">
+            <div class="module-intro underlined center">
                 <h2><?php the_field( 'cta_module_title', 'options' ); ?></h2>
                 <div class="sub-title"><?php the_field( 'cta_module_text', 'options' ); ?></div>
             </div>
@@ -213,7 +213,7 @@
 
     <section class="testimonials-slider-module p60">
         <div class="constrain">
-            <div class="module-intro underlined">
+            <div class="module-intro underlined center">
                 <h2><?php the_field( 'testimonials_slider_title', 'options' ); ?></h2>
             </div>
             <?php

@@ -24,7 +24,7 @@
 					<img src="<?php echo $iImage[ 'url' ]; ?>" alt="<?php echo $iImage[ 'alt' ]; ?>">
 				</div>
 				<div class="page-intro-content">
-					<h1 class="module-intro underlined left"><?php the_field( 'introduction_title' ); ?></h1>
+					<h1 class="underlined left"><?php the_field( 'introduction_title' ); ?></h1>
 					<div class="intro-text">
 						<?php the_field( 'introduction_content_text' ); ?>
 					</div>
@@ -54,6 +54,42 @@
 				</div>
 			</div>
 		</section>
+
+
+		<section class="packages p60">
+			<div class="constrain">
+				<h2 class="underlined center">
+					<?php the_field( 'flexible_packages_title' ); ?>
+				</h2>
+				<?php if ( get_field( 'flexible_packages_intro_content' ) ) : ?>
+					<div class="intro-text">
+						<?php the_field( 'flexible_packages_intro_content' ) ?>
+					</div>
+				<?php endif; ?>
+
+				<?php if ( have_rows( 'flexible_packages_available' ) ) : ?>
+					<div class="packages-list flexxed">
+						<?php while ( have_rows( 'flexible_packages_available' ) ) : the_row(); ?>
+
+							<div class="package-item flexxed">
+								<?php $pImage = get_sub_field( 'package_image' ); ?>
+								<img src="<?php echo $pImage[ 'url' ]; ?>" alt="<?php echo $pImage[ 'alt' ]; ?>" class="package-image">
+								<div class="package-content">
+									<h3 class="dk-underlined"><?php the_sub_field( 'package_name' ); ?></h3>
+									<div class="package-text"><?php the_sub_field( 'package_content' ); ?></div>
+									<div class="package-btns">
+										<a href="<?php the_sub_field( 'quote_button_link' ); ?>" class="btn btn-sm red-bg">Request a Quote <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+										<a href="<?php the_sub_field( 'learn_more_button_link' ); ?>" class="btn btn-sm white-brdr">Learn More <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+									</div>
+								</div>
+							</div>
+
+						<?php endwhile; ?>
+					</div>
+				<?php endif; ?>
+			</div>
+		</section>
+
 
 		<?php if ( have_rows( 'quick_links_module', 'options' ) ) : ?>
 			<section class="quick-links flexxed">

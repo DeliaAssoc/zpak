@@ -553,6 +553,7 @@ a.mdgray-brdr:visited {
   content: '';
   display: block;
   left: 0;
+  max-width: 300px;
   position: absolute;
   width: 50%;
 }
@@ -560,6 +561,29 @@ a.mdgray-brdr:visited {
   left: 0;
   margin: 0 auto;
   right: 0;
+}
+
+.dk-underlined {
+  position: relative;
+}
+.dk-underlined:before {
+  border-bottom: 1px solid #252525;
+  bottom: -5px;
+  content: '';
+  display: block;
+  left: 0;
+  position: absolute;
+  width: 200px;
+}
+.dk-underlined.center:before {
+  left: 0;
+  margin: 0 auto;
+  right: 0;
+}
+
+h1.underlined, h2.underlined, h3.underlined, h4.underlined {
+  margin: 0 0 30px 0;
+  padding: 0 0 10px 0;
 }
 
 .sub-heading {
@@ -571,9 +595,12 @@ a.mdgray-brdr:visited {
 
 .module-intro {
   font-size: 15px;
-  margin: 0 auto 20px auto;
+  margin: 0 auto 30px auto;
   max-width: 900px;
   text-align: center;
+}
+.module-intro.underlined {
+  padding: 0 0 20px 0;
 }
 
 .content-area ul {
@@ -595,7 +622,7 @@ a.mdgray-brdr:visited {
 }
 
 .slick-dots {
-  bottom: -30px;
+  bottom: -50px;
 }
 .slick-dots li {
   margin: 0 3px;
@@ -1321,16 +1348,7 @@ h1.module-intro.underlined.left:after {
   margin: 0 0 10px 0;
 }
 .service-tile h3 {
-  position: relative;
-}
-.service-tile h3:after {
-  content: '';
-  border-bottom: 1px solid #252525;
-  bottom: -5px;
-  display: inline-block;
-  left: 0;
-  position: absolute;
-  width: 35%;
+  padding: 0 0 10px 0;
 }
 .service-tile .btn {
   background-color: #707070;
@@ -1363,6 +1381,35 @@ h1.module-intro.underlined.left:after {
 
 .retro-intro .intro-text {
   margin: 0 0 20px 0;
+}
+
+.packages {
+  background-color: #e1e1e1;
+}
+.packages h2 {
+  text-align: center;
+}
+
+.package-item {
+  background-color: #707070;
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.25);
+  color: #FFFFFF;
+  margin: 0 0 20px 0;
+}
+.package-item .package-content {
+  padding: 15px;
+}
+.package-item .package-content h3 {
+  font-size: 24px;
+}
+.package-item ul li:before {
+  color: #FFFFFF;
+}
+.package-item .package-btns {
+  text-align: center;
+}
+.package-item .package-btns a {
+  margin: 0 0 10px 0;
 }
 
 .accordion {
@@ -1526,7 +1573,6 @@ h1.module-intro.underlined.left:after {
 }
 
 .product-line-module {
-  background-color: #FFFFFF;
   padding: 20px 0;
 }
 .product-line-module h2 {
@@ -2086,6 +2132,20 @@ footer {
     top: 10px;
     width: 47px;
   }
+
+  .package-item .package-content {
+    padding: 25px;
+  }
+  .package-item .package-btns {
+    margin: 10px 0 0 0;
+    text-align: left;
+  }
+  .package-item .package-btns a {
+    margin: 0;
+  }
+  .package-item .package-btns a:first-of-type {
+    margin: 0 30px 0 0;
+  }
 }
 @media only screen and (min-width: 568px) {
   .p30 {
@@ -2461,13 +2521,52 @@ footer {
     padding: 30px;
   }
 
+  .package-item {
+    margin: 0 0 35px 0;
+    padding: 25px;
+  }
+  .package-item.flexxed {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+  .package-item .package-image {
+    width: 30%;
+  }
+  .package-item .package-content {
+    padding: 0;
+    width: 65%;
+  }
+  .package-item .package-btns {
+    margin: 20px 0 0 0;
+  }
+  .package-item .package-btns a:first-of-type {
+    margin: 0 40px 0 0;
+  }
+
   .half {
     width: 48%;
   }
 }
 @media only screen and (min-width: 960px) {
+  .module-intro.underlined {
+    margin: 0 auto 45px auto;
+  }
+
   h2 {
     font-size: 34px;
+  }
+
+  h1.underlined, h2.underlined, h3.underlined, h4.underlined {
+    margin: 0 0 45px 0;
+    padding: 0 0 10px 0;
   }
 
   .hero-slider .slick-next,
@@ -2561,6 +2660,10 @@ footer {
   }
   .retroequip .intro-image {
     width: 32%;
+  }
+
+  .package-item .package-content h3 {
+    margin: 0 0 20px 0;
   }
 }
 @media only screen and (min-width: 1024px) {
@@ -2695,6 +2798,20 @@ footer {
 
   .core-services .service-tile {
     margin: 0 0 40px 0;
+  }
+
+  .package-item {
+    padding: 25px;
+  }
+  .package-item .package-image {
+    width: 25%;
+  }
+  .package-item .package-content {
+    padding: 0;
+    width: 72%;
+  }
+  .package-item .package-btns {
+    margin: 30px 0 0 0;
   }
 
   .main-footer .footer-col {

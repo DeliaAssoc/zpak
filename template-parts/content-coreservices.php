@@ -20,8 +20,8 @@
 
         <section class="cm-intro p60">
             <div class="constrain md">
-				<div class="module-intro underlined">
-					<h1><?php the_field( 'introduction_title' ); ?></h1>
+				<div class="module-intro">
+					<h1 class="underlined center"><?php the_field( 'introduction_title' ); ?></h1>
 				</div>
 				<div class="intro-text">
 					<?php the_field( 'introduction_text' ); ?>
@@ -36,7 +36,7 @@
 		
 		<?php if ( have_rows( 'services' ) ) : ?>
 			<section class="core-services p60">
-				<div class="module-intro underlined">
+				<div class="module-intro underlined center">
 					<h2><?php the_field( 'services_content_title' ); ?></h2>
 					<div class="text"><?php the_field( 'services_content_text' ); ?></div>
 				</div>
@@ -49,7 +49,7 @@
                                 <img src="<?php echo $icon[ 'url' ]; ?>" alt="<?php echo $icon[ 'alt' ]; ?>">
                             </div>
                             
-                            <h3 class="service-title"><?php the_sub_field( 'service_title' ); ?></h3>
+                            <h3 class="service-title dk-underlined"><?php the_sub_field( 'service_title' ); ?></h3>
                             <div class="snippet"><?php the_sub_field( 'service_snippet' ); ?></div>
                             <div class="btn btn-sm">Learn More <i class="fa fa-chevron-right" aria-hidden="true"></i></div>
                         </a>
