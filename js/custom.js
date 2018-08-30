@@ -204,6 +204,21 @@ $( document ).ready( function() {
 
 
 
+	// ACCORDION FUNCTIONALITY
+	$( '.accordion' ).find( 'a' ).on( 'click', function( e ){
+
+		e.preventDefault();
+		
+		if ( !$( this ).hasClass( 'open' ) ) {
+			$( this ).addClass( 'open' ).next( '.acc-content' ).slideToggle();
+		} else {
+			$( this ).removeClass( 'open' ).next( '.acc-content' ).slideToggle();
+		}
+
+	});
+
+
+
 
 	// Smooth Scroll for Back To Top Button *Thank you CSS-TRICKS*
 	$('a[href*="#"]:not([href="#"])').click(function() {

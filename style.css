@@ -544,6 +544,24 @@ a.mdgray-brdr:visited {
   color: #959595;
 }
 
+.underlined {
+  position: relative;
+}
+.underlined:before {
+  border-bottom: 3px solid #e1213d;
+  bottom: -7px;
+  content: '';
+  display: block;
+  left: 0;
+  position: absolute;
+  width: 50%;
+}
+.underlined.center:before {
+  left: 0;
+  margin: 0 auto;
+  right: 0;
+}
+
 .sub-heading {
   font-size: 14px;
   font-weight: 700;
@@ -557,25 +575,13 @@ a.mdgray-brdr:visited {
   max-width: 900px;
   text-align: center;
 }
-.module-intro.underlined {
-  margin: 0 0 15px 0;
-  padding: 0 0 15px 0;
-  position: relative;
-}
-.module-intro.underlined:after {
-  border-bottom: 3px solid #e1213d;
-  bottom: 0;
-  content: '';
-  left: 0;
-  margin: 0 auto;
-  position: absolute;
-  right: 0;
-  width: 150px;
-}
 
+.content-area ul {
+  margin: 0 0 10px 0;
+}
 .content-area ul li {
   list-style-type: none;
-  margin: 0 0 5px 0;
+  margin: 0 0 10px 0;
   padding: 0 0 0 20px;
   position: relative;
 }
@@ -1339,6 +1345,88 @@ h1.module-intro.underlined.left:after {
   background-color: #e1213d;
 }
 
+.service .page-intro-content .intro-text {
+  margin: 0 0 20px 0;
+}
+
+.machine-solutions {
+  background-color: #e1e1e1;
+}
+.machine-solutions .intro-text {
+  margin: 0 0 20px 0;
+  text-align: center;
+}
+
+.retroequip .flexxed {
+  margin: 0 0 20px 0;
+}
+
+.retro-intro .intro-text {
+  margin: 0 0 20px 0;
+}
+
+.accordion {
+  overflow: hidden;
+  position: relative;
+}
+.accordion .accordion-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+}
+.accordion a.acc-title {
+  display: block;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+  padding: 7px 7px 7px 45px;
+  position: relative;
+}
+.accordion a.acc-title:before {
+  content: '\f067';
+  display: block;
+  font-family: "FontAwesome", sans-serif;
+  font-size: 28px;
+  font-weight: 300;
+  height: 30px;
+  left: 5px;
+  line-height: 32px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+}
+.accordion a.acc-title.open:before {
+  content: '\f068';
+}
+.accordion .acc-content {
+  display: none;
+  margin: 0 0 5px 0;
+  padding: 5px 0 5px 30px;
+}
+.accordion.white-theme a.acc-title {
+  background-color: #FFFFFF;
+}
+.accordion.white-theme a.acc-title:before {
+  background-color: #e1213d;
+  color: #FFFFFF;
+}
+.accordion.white-theme a.acc-title.open {
+  background-color: #959595;
+  color: #FFFFFF;
+}
+.accordion.gray-theme a.acc-title {
+  background-color: transparent;
+}
+.accordion.gray-theme a.acc-title:before {
+  background-color: #e1213d;
+  color: #FFFFFF;
+}
+.accordion.gray-theme a.acc-title.open {
+  background-color: #959595;
+  color: #FFFFFF;
+}
+
 /*--------------------------------------------------------------
 ## MODULES
 --------------------------------------------------------------*/
@@ -2082,6 +2170,23 @@ footer {
     margin: 0 0 25px 0;
   }
 
+  .retroequip .flexxed {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+  .retroequip .retro-intro,
+  .retroequip .intro-image {
+    width: 48%;
+  }
+
   .main-footer .constrain > .flexxed {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -2446,6 +2551,16 @@ footer {
   }
   .intro-section .intro-buttons a {
     margin: 0 15px 0 0;
+  }
+
+  .retroequip .flexxed {
+    margin: 0 0 30px 0;
+  }
+  .retroequip .retro-intro {
+    width: 64%;
+  }
+  .retroequip .intro-image {
+    width: 32%;
   }
 }
 @media only screen and (min-width: 1024px) {
