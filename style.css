@@ -549,7 +549,7 @@ a.mdgray-brdr:visited {
 }
 .underlined:before {
   border-bottom: 3px solid #e1213d;
-  bottom: -7px;
+  bottom: 0;
   content: '';
   display: block;
   left: 0;
