@@ -28,9 +28,8 @@
 					<div class="intro-text">
 						<?php the_field( 'intro_section_content' ); ?>
 					</div>
-					<div class="intro-buttons flexxed">
-						<a class="btn btn-sm red-bg" href="/contact">Request a Quote</a>
-						<a class="btn btn-sm mdgray-brdr" href="/contact">Learn More About <?php the_title(); ?></a>
+					<div class="intro-buttons">
+						<a class="btn btn-sm red-brdr" href="/contact">Contact us to learn More About <?php the_title(); ?></a>
 					</div>
 				</div>
 			</div>

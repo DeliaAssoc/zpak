@@ -21,34 +21,34 @@
         <section class="cm-intro p60">
             <div class="constrain md">
 				<div class="module-intro">
-					<h1 class="underlined center" ><?php the_field( 'introduction_title' ); ?></h1>
+					<h1 class="underlined center" ><?php the_field( 'core_markets_introduction_title', 'options' ); ?></h1>
 				</div>
 				<div class="intro-text">
-					<?php the_field( 'introduction_text' ); ?>
+					<?php the_field( 'core_markets_introduction_text', 'options' ); ?>
 				</div>
-				<div class="cm-intro-btns flexxed">
-					<a href="<?php the_field( 'button_1_link' ); ?>" class="btn btn-sm red-bg"><?php the_field( 'button_1_text' ); ?></a>
-					<a href="<?php the_field( 'button_2_link' ); ?>" class="btn btn-sm mdgray-brdr"><?php the_field( 'button_2_text' ); ?></a>
+				<div class="cm-intro-btns">
+
+					<a href="<?php the_field( 'core_markets_intro_button_1_link', 'options' ); ?>" class="btn btn-sm red-brdr"><?php the_field( 'core_markets_intro_button_1_text', 'options' ); ?></a>
 				</div>
             </div>
 
 		</section>
 		
-		<?php if ( have_rows( 'markets' ) ) : ?>
-			<section class="core-markets p60" style="background-image: url( '<?php the_field( 'markets_background_image' ); ?>' );">
+		<?php if ( have_rows( 'core_markets_markets', 'options' ) ) : ?>
+			<section class="core-markets p60" style="background-image: url( '<?php the_field( 'core_markets_markets_background_image', 'options' ); ?>' );">
 				<div class="module-intro underlined center">
-					<h2><?php the_field( 'markets_content_title' ); ?></h2>
-					<div class="text"><?php the_field( 'markets_content_text' ); ?></div>
+					<h2><?php the_field( 'core_markets_markets_content_title', 'options' ); ?></h2>
+					<div class="text"><?php the_field( 'core_markets_markets_content_text', 'options' ); ?></div>
 				</div>
 				<div class="constrain flexxed">
 					
-					<?php while ( have_rows( 'markets' ) ) : the_row(); ?>
-						<a href="<?php the_sub_field( 'market_link' ); ?>" class="market-tile">
+					<?php while ( have_rows( 'core_markets_markets', 'options' ) ) : the_row(); ?>
+						<a href="<?php the_sub_field( 'core_markets_market_link', 'options' ); ?>" class="market-tile">
 							<div class="market-icon">
-								<?php $icon = get_sub_field( 'market_icon' ); ?>
+								<?php $icon = get_sub_field( 'core_markets_market_icon', 'options' ); ?>
                                 <img src="<?php echo $icon[ 'url' ]; ?>" alt="<?php echo $icon[ 'alt' ]; ?>">
 							</div>
-							<div class="market-title"><?php the_sub_field( 'market_title' ); ?> <i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+							<div class="market-title"><?php the_sub_field( 'core_markets_market_title', 'options' ); ?> <i class="fa fa-chevron-right" aria-hidden="true"></i></div>
 						</a>
 					<?php endwhile; ?>
 				</div>

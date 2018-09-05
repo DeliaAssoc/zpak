@@ -107,6 +107,17 @@ add_action( 'after_setup_theme', 'zpak_content_width', 0 );
 function header_widgets() {
 
 	$args = array(
+		'id'            => 'top_header',
+		'class'         => 'top-header',
+		'name'          => __( 'Top left header links', 'text_domain' ),
+		'description'   => __( 'Links for Phone, careers, and news & events', 'text_domain' ),
+		'before_title'  => '',
+		'after_title'   => '',
+		'before_widget' => '',
+		'after_widget'  => '',
+	);
+	register_sidebar( $args );
+	$args = array(
 		'id'            => 'header_language',
 		'class'         => 'header-language',
 		'name'          => __( 'Header Language', 'text_domain' ),
@@ -121,7 +132,7 @@ function header_widgets() {
 }
 add_action( 'widgets_init', 'header_widgets' );
 
-function footer_columns() {
+function footer_widgets() {
 
 	$args = array(
 		'id'            => 'column_1',
@@ -159,8 +170,20 @@ function footer_columns() {
 	);
 	register_sidebar( $args );
 
+	$args = array(
+		'id'            => 'legal',
+		'class'         => 'legal',
+		'name'          => __( 'Legal Links', 'text_domain' ),
+		'description'   => __( 'Widget Area for links on bottom of the site', 'text_domain' ),
+		'before_title'  => '',
+		'after_title'   => '',
+		'before_widget' => '<ul>',
+		'after_widget'  => '</ul>',
+	);
+	register_sidebar( $args );
+
 }
-add_action( 'widgets_init', 'footer_columns' );
+add_action( 'widgets_init', 'footer_widgets' );
 
 /**
  * Enqueue scripts and styles.

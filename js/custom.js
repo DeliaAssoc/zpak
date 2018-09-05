@@ -130,21 +130,21 @@ $( document ).ready( function() {
 				breakpoint: 1200,
 				settings: {
 					slidesToShow: 4,
-					slideToScroll: 4
+					slidesToScroll: 4
 				}
 			},
 			{
 				breakpoint: 960,
 				settings: {
 					slidesToShow: 3,
-					slideToScroll: 3
+					slidesToScroll: 3
 				}
 			},
 			{
 				breakpoint: 768,
 				settings: {
 					slidesToShow: 2,
-					slideToScroll: 2
+					slidesToScroll: 2
 				}
 			},
 			{
@@ -152,7 +152,7 @@ $( document ).ready( function() {
 				settings: {
 					dots: false,
 					slidesToShow: 1,
-					slideToScroll: 1
+					slidesToScroll: 1
 				}
 			}
 		]

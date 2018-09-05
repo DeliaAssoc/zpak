@@ -116,11 +116,13 @@
                             <div class="product-thumbnail">
                                 <?php the_post_thumbnail(); ?>
                             </div>
-                            <div class="product-title"><?php the_title(); ?></div>
-                            <div class="product-snippet">
-                                <?php the_field( 'product_snippet' ); ?>
+                            <div class="product-tile-content">
+                                <div class="product-title"><?php the_title(); ?></div>
+                                <div class="product-snippet">
+                                    <?php the_field( 'product_snippet' ); ?>
+                                </div>
+                                <div class="read-more btn btn-sm">Read More <i class="fa fa-angle-right" aria-hidden="true"></i></div>
                             </div>
-                            <div class="read-more btn btn-sm">Read More <i class="fa fa-angle-right" aria-hidden="true"></i></div>
                         </a><!-- .product-tile -->
                         <?php endwhile; ?>
                     </div><!-- .product-slider -->

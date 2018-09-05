@@ -45,15 +45,9 @@
 			<div class="constrain">
 				<div class="flexxed">
 					<div class="th-left flexxed">
-						<div class="thl-item phone">
-							<i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:<?php echo get_theme_mod( 'theme_company_tollfree' ); ?>"><?php echo get_theme_mod( 'theme_company_tollfree' ); ?></a>
-						</div>
-						<div class="thl-item blog">
-							<i class="fa fa-file-text-o" aria-hidden="true"></i> <a href="">News & Events</a>
-						</div>
-						<div class="thl-item careers">
-							<i class="fa fa-user" aria-hidden="true"></i> <a href="/careers">Careers</a>
-						</div>
+						<?php if ( is_active_sidebar( 'top_header' ) ) : ?>
+							<?php dynamic_sidebar( 'top_header' ); ?>
+						<?php endif; ?>
 						<div class="thl-item social">
 							<div class="flexxed">
 								<?php social_media_list(); ?>

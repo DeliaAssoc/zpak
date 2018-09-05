@@ -29,8 +29,7 @@
 						<?php the_field( 'introduction_content_text' ); ?>
 					</div>
 					<div class="intro-buttons flexxed">
-						<a class="btn btn-sm red-bg" href="/contact">Request a Quote</a>
-						<a class="btn btn-sm mdgray-brdr" href="/contact">Learn More About <?php the_title(); ?></a>
+						<a class="btn btn-sm red-brdr" href="/contact">Contact us to learn more about <?php the_title(); ?></a>
 					</div>
 				</div>
 			</div>
@@ -39,8 +38,8 @@
         <?php if ( have_rows( 'products' ) ) : ?>
             <section class="market-products ltgray-bg p60">
                 <div class="constrain">
-                    <div class="module-intro underlined">
-                        <h2><?php the_field( 'product_title' ); ?></h2>
+                    <div class="module-intro">
+                        <h2 class="underlined center"><?php the_field( 'product_title' ); ?></h2>
                     </div>
                     <div class="module-intro intro-text"><?php the_field( 'products_text_content' ); ?></div>
                 </div>
@@ -49,7 +48,8 @@
                         <?php while ( have_rows( 'products' ) ) : the_row(); ?>
                             <div class="market-product-tile flexxed">
                                 <?php $mpImage = get_sub_field( 'product_image' ); ?>
-                                <img src="<?php echo $mpImage[ 'url' ]; ?>" alt="<?php echo $mpImage[ 'alt' ]; ?>" class="mpimage">
+								<!-- <img src="<?php echo $mpImage[ 'url' ]; ?>" alt="<?php echo $mpImage[ 'alt' ]; ?>" class="mpimage"> -->
+								<div class="mpimage" style="background-image: url( '<?php echo $mpImage[ 'url' ]; ?>' );" ></div>
                                 <div class="mp-content">
                                     <h3><?php the_sub_field( 'product_name' ); ?></h3>
                                     <div class="snippet"><?php the_sub_field( 'product_snippet' ); ?></div>
@@ -71,30 +71,11 @@
                         <div class="sub-heading"><?php the_field( 'success_story_sub_heading' ); ?></div>
                         <h2><?php the_field( 'success_story_title' ); ?></h2>
                         <div class="text"><?php the_field( 'success_story_snippet' ); ?></div>
-                        <a href="<?php the_field( 'success_story_link' ); ?>" class="btn btn-sm red-bg"><?php the_field( 'success_story_link_text' ); ?> <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        <a href="<?php the_field( 'success_story_link' ); ?>" class="btn btn-sm red-brdr"><?php the_field( 'success_story_link_text' ); ?> <i class="fa fa-angle-right" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </section>
         <?php endif; ?>
 
-		<?php if ( have_rows( 'quick_links_module', 'options' ) ) : ?>
-			<section class="quick-links flexxed">
-				<?php while ( have_rows( 'quick_links_module', 'options' ) ) : the_row(); ?>
-					<a href="<?php the_sub_field( 'quick_link_url', 'options' ); ?>" class="quick-link">
-						<div class="flexxed">
-							<div class="ql-icon">
-								<?php $qlIcon = get_sub_field( 'quick_link_icon', 'options' ); ?>
-								<img src="<?php echo $qlIcon[ 'url' ]; ?>" alt="<?php echo $qlIcon[ 'alt' ]; ?>">
-							</div>
-							<div class="ql-content">
-								<div class="title"><?php the_sub_field( 'quick_link_title', 'options' ); ?></div>
-								<div class="btn white-brdr">Learn More <i class="fa fa-angle-right" aria-hidden="true"></i></div>
-							</div>
-						</div>
-					</a>
-				<?php endwhile; ?>
-			</section>
-    	<?php endif; ?>
-	</div><!-- .entry-content -->
 
 </article><!-- #post-<?php the_ID(); ?> -->
