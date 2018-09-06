@@ -1241,6 +1241,9 @@ h1.module-intro.underlined.left:after {
 .intro-section .intro-content-image {
   margin: 0 0 15px 0;
 }
+.intro-section .intro-content-image img {
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.25);
+}
 .intro-section .intro-buttons {
   margin: 15px 0 0 0;
 }
@@ -1689,7 +1692,7 @@ a.product-tile .btn {
 a.product-tile:hover {
   background-color: #9c1f2e;
 }
-a.product-tile:hover > .btn {
+a.product-tile:hover .read-more {
   background-color: #e1213d;
 }
 
