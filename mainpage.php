@@ -1,8 +1,6 @@
 <?php
 /**
- * Template Name: Service (Machine Capatability)
- * Template Post Type: service
- *
+ * Template Name: Main Page Template
  *
  * @package Zip_Pak
  */
@@ -17,7 +15,7 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 
-			get_template_part( 'template-parts/content', 'service-capatability' );
+			get_template_part( 'template-parts/content', 'main' );
 
 
 		endwhile; // End of the loop.

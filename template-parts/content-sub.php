@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying page content in single-products.php
+ * Template part for displaying page content in subpage.php
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -20,42 +20,56 @@
 		<section class="intro-section product p45">
 			<div class="constrain flexxed">
 				<div class="intro-content-image">
-					<?php $iImage = get_field( 'intro_section_image' ); ?>
+					<?php $iImage = get_field( 'subpage_intro_image' ); ?>
 					<img src="<?php echo $iImage[ 'url' ]; ?>" alt="<?php echo $iImage[ 'alt' ]; ?>">
 				</div>
 				<div class="page-intro-content">
-					<h1 class="module-intro underlined left"><?php the_field( 'intro_section_title' ); ?></h1>
+					<h1 class="module-intro underlined left"><?php the_field( 'subpage_intro_title' ); ?></h1>
 					<div class="intro-text">
-						<?php the_field( 'intro_section_content' ); ?>
+						<?php the_field( 'subpage_intro' ); ?>
 					</div>
-					<div class="intro-buttons">
+					<!-- <div class="intro-buttons">
 						<a class="btn btn-sm red-brdr" href="/contact">Contact us to learn More About <?php the_title(); ?></a>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</section>
 
-		<?php if ( have_rows( 'content_section' ) ) : 
+		<?php if ( have_rows( 'sections' ) ) : 
 
-			while ( have_rows( 'content_section' ) ) : the_row();
+			while ( have_rows( 'sections' ) ) : the_row();
 
-				if ( get_row_layout() == 'half_half' ) : ?>
-					<section class="product-section <?php the_sub_field( 'section_background_color' ); ?> p45">
+                if ( get_row_layout() == 'full_width' ) : ?>
+                    <section class="subpage-section full <?php the_sub_field( 'section_bg_color' ); ?> p45">
+						<div class="constrain md">
+							<?php the_sub_field( 'section_content' ); ?>
+						</div>
+					</section>
+				<?php elseif ( get_row_layout() == 'half_and_half' ) : ?>
+                    <section class="subpage-section half-half <?php the_sub_field( 'section_bg_color' ); ?> p45">
 						<div class="constrain md flexxed">
 							<div class="left-half half">
-								<?php the_sub_field( 'left_half_content' ); ?>
+								<?php the_sub_field( 'left_half' ); ?>
 							</div>
 							<div class="right-half half">
-								<?php the_sub_field( 'right_half_content' ); ?>
+								<?php the_sub_field( 'right_half' ); ?>
 							</div>
 						</div>
-					</section>
-				<?php elseif ( get_row_layout() == 'full_width' ) : ?>
-					<section class="product-section <?php the_sub_field( 'section_background_color' ); ?> p45">
-						<div class="constrain md">
-							<?php the_sub_field( 'full_content' ); ?>
+                    </section>
+                <?php elseif ( get_row_layout() == 'three_column' ) : ?>
+                    <section class="subpage-section three-column <?php the_sub_field( 'section_bg_color' ); ?> p45">
+						<div class="constrain md flexxed">
+							<div class="one-third column-one">
+								<?php the_sub_field( 'first_column' ); ?>
+							</div>
+							<div class="one-third column-two">
+								<?php the_sub_field( 'second_column' ); ?>
+                            </div>
+							<div class="one-third column-three">
+								<?php the_sub_field( 'third_column' ); ?>
+							</div>
 						</div>
-					</section>
+                    </section>
 				<?php endif; 
 
 			endwhile;
