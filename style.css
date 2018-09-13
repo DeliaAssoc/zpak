@@ -832,7 +832,6 @@ input[type="text"],
 input[type="email"],
 input[type="url"],
 input[type="password"],
-input[type="search"],
 input[type="number"],
 input[type="tel"],
 input[type="range"],
@@ -849,6 +848,13 @@ textarea {
   border-radius: 0;
   padding: 7px;
   width: 100%;
+}
+
+input[type="search"] {
+  color: #666;
+  border: 1px solid #e1e1e1;
+  border-radius: 0;
+  padding: 3px;
 }
 
 input[type="text"]:focus,
@@ -1661,6 +1667,15 @@ a.core-product-tile:hover .cp-learn-more {
   font-weight: 700;
   padding: 15px 30px;
   text-transform: uppercase;
+}
+
+.blog article {
+  margin: 0 0 45px 0;
+  text-align: center;
+}
+
+.entry-meta {
+  margin: 0 0 20px 0;
 }
 
 /*--------------------------------------------------------------
