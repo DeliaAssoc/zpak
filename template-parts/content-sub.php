@@ -28,9 +28,9 @@
 					<div class="intro-text">
 						<?php the_field( 'subpage_intro' ); ?>
 					</div>
-					<!-- <div class="intro-buttons">
+					<div class="intro-buttons">
 						<a class="btn btn-sm red-brdr" href="/contact">Contact us to learn More About <?php the_title(); ?></a>
-					</div> -->
+					</div>
 				</div>
 			</div>
 		</section>
