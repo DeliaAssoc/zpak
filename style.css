@@ -614,7 +614,7 @@ h1.underlined, h2.underlined, h3.underlined, h4.underlined {
 }
 .content-area ul li:before {
   color: #e1213d;
-  content: '\f192';
+  content: '\f054';
   font-family: "FontAwesome", sans-serif;
   left: 0;
   position: absolute;
@@ -847,7 +847,8 @@ textarea {
   color: #666;
   border: 1px solid #e1e1e1;
   border-radius: 0;
-  padding: 3px;
+  padding: 7px;
+  width: 100%;
 }
 
 input[type="text"]:focus,
@@ -1612,6 +1613,54 @@ a.core-product-tile:hover .cp-learn-more {
 .accordion.gray-theme a.acc-title.open {
   background-color: #959595;
   color: #FFFFFF;
+}
+
+.contact-intro {
+  text-align: center;
+}
+
+.form-locs .flexxed {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+}
+.form-locs .region-block {
+  background-color: #f5f4f4;
+  margin: 0 0 20px 0;
+  padding: 15px;
+}
+.form-locs .region-block:last-of-type {
+  margin: 0;
+}
+.form-locs .region-block h3 {
+  color: #e1213d;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.form-locs .location {
+  margin: 0 0 20px 0;
+}
+.form-locs .location:last-of-type {
+  margin: 0;
+}
+.form-locs .location-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 5px 0;
+}
+.form-locs .form {
+  margin: 0 0 30px 0;
+}
+.form-locs .form .wpcf7-list-item {
+  display: block;
+}
+.form-locs .form input[type=submit] {
+  background-color: #e1213d;
+  color: #FFFFFF;
+  font-weight: 700;
+  padding: 15px 30px;
+  text-transform: uppercase;
 }
 
 /*--------------------------------------------------------------
@@ -2418,6 +2467,15 @@ footer {
     width: 48%;
   }
 
+  .form-locs .locs {
+    -webkit-column-count: 2;
+    column-count: 2;
+  }
+  .form-locs .region-block {
+    display: inline-block;
+    width: 100%;
+  }
+
   .main-footer .constrain > .flexxed {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -2829,6 +2887,11 @@ footer {
   }
   .package-item .package-btns a:first-of-type {
     margin: 0 40px 0 0;
+  }
+
+  .form-locs > .constrain .flexxed {
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   .half {
