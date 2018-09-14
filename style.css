@@ -1524,6 +1524,10 @@ a.core-product-tile:hover .cp-learn-more {
   text-align: center;
 }
 
+.success-image {
+  text-align: center;
+}
+
 .service .page-intro-content .intro-text {
   margin: 0 0 20px 0;
 }
@@ -3058,6 +3062,26 @@ footer {
     width: 32%;
   }
 
+  .success-intro .flexxed {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+  .success-intro .intro-text {
+    width: 49%;
+  }
+
+  .success-image {
+    width: 49%;
+  }
+
   .package-item .package-content h3 {
     margin: 0 0 20px 0;
   }
@@ -3269,6 +3293,12 @@ footer {
 
   a.product-tile {
     margin: 0 5px;
+  }
+
+  .success-intro .flexxed {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
   }
 
   .site-footer {

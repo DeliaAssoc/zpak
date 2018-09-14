@@ -18,11 +18,24 @@
 			</div>
 		</section>
 
-        <section class="success-story">
-            <div class="constrain md p60">
-                <?php the_content(); ?>
-            </div>
-        </section>
+        <section class="success-intro p60">
+            <div class="constrain md">
+				<div class="module-intro">
+					<h1 class="underlined center" ><?php the_field( 'success_story_title' ); ?></h1>
+				</div>
+			</div>
+			<div class="constrain">
+				<div class="flexxed p30">
+					<div class="success-image">
+						<?php $sImage = get_field( 'success_story_image' ); ?>
+						<img src="<?php echo $sImage[ 'url' ]; ?>" alt="<?php echo $sImage[ 'alt' ]; ?>">
+					</div>
+					<div class="intro-text">
+						<?php the_field( 'success_story_text' ); ?>
+					</div>
+				</div>
+			</div>
+		</section>
 
     <section class="cta-module p60" style="background-image: url( '<?php the_field( 'cta_module_background_image', 'options' ); ?>' );">
         <div class="constrain">
