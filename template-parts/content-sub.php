@@ -29,7 +29,7 @@
 						<?php the_field( 'subpage_intro' ); ?>
 					</div>
 					<div class="intro-buttons">
-						<a class="btn btn-sm red-brdr" href="/contact">Contact us to learn More About <?php the_title(); ?></a>
+						<a class="btn btn-sm red-bg" href="/contact">Contact us to learn More About <?php the_title(); ?></a>
 					</div>
 				</div>
 			</div>

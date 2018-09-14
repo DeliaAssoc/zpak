@@ -443,6 +443,9 @@ a.red-bg:hover {
   background-color: #9c1f2e;
   color: #FFFFFF;
 }
+a.red-bg:visited {
+  color: #e1e1e1;
+}
 
 a.dkred-bg {
   background-color: #9c1f2e;
@@ -469,11 +472,11 @@ a.ltgray-bg:hover {
 
 a.white-bg {
   background-color: #FFFFFF;
-  color: #e1213d;
+  color: #e1213d !important;
 }
 a.white-bg:hover {
   background-color: #e1213d;
-  color: #FFFFFF;
+  color: #FFFFFF !important;
 }
 
 a.dstgray-bg {
@@ -1246,7 +1249,7 @@ a.subpage-tile {
   font-weight: 700;
   margin: 0 0 10px 0;
   width: 260px;
-  padding: 30px;
+  padding: 50px 25px;
   text-transform: uppercase;
 }
 a.subpage-tile:hover {
@@ -1440,7 +1443,7 @@ a.core-product-tile:hover .cp-learn-more {
 }
 
 .cp-learn-more {
-  background-color: #707070;
+  background-color: #9c1f2e;
   bottom: 20px;
   font-weight: 700;
   left: 50%;
@@ -1464,19 +1467,30 @@ a.core-product-tile:hover .cp-learn-more {
   box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.25);
   color: #FFFFFF;
   margin: 0 0 20px 0;
-  padding: 20px;
 }
 .service-tile:last-of-type {
   margin: 0;
 }
-.service-tile .service-image {
-  margin: 0 0 10px 0;
+.service-tile .service-title {
+  position: relative;
+}
+.service-tile .service-title:before {
+  border-bottom: 1px solid #e1213d;
+  bottom: -5px;
+  content: '';
+  display: block;
+  left: 0;
+  position: absolute;
+  width: 200px;
+}
+.service-tile .service-content {
+  padding: 20px;
 }
 .service-tile h3 {
   padding: 0 0 10px 0;
 }
 .service-tile .btn {
-  background-color: #707070;
+  background-color: #e1213d;
   display: inline-block;
   margin: 20px 0 0 0;
 }
@@ -1495,7 +1509,7 @@ a.core-product-tile:hover .cp-learn-more {
   font-weight: 700;
   margin: 0 0 10px 0;
   width: 260px;
-  padding: 30px;
+  padding: 50px 25px;
   text-transform: uppercase;
 }
 .success-tile:hover {
@@ -1794,14 +1808,14 @@ a.product-tile .product-tile-content {
   padding: 30px 30px 80px 30px;
 }
 a.product-tile .product-title {
-  border-bottom: 1px solid #252525;
+  border-bottom: 1px solid #e1213d;
   font-size: 20px;
   font-weight: 700;
   margin: 0 0 10px 0;
   padding: 0 0 10px 0;
 }
 a.product-tile .btn {
-  background-color: #707070;
+  background-color: #9c1f2e;
   bottom: 30px;
   color: #FFFFFF;
   font-size: 13px;
@@ -2322,7 +2336,6 @@ footer {
   }
 
   .success-tile {
-    padding: 30px 0;
     width: 49%;
   }
 
@@ -2341,7 +2354,6 @@ footer {
     justify-content: space-evenly;
   }
   .subpages a.subpage-tile {
-    padding: 30px 0;
     width: 49%;
   }
 
@@ -2385,9 +2397,9 @@ footer {
     flex-direction: row;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
   }
 
   a.core-product-tile {
@@ -2705,11 +2717,11 @@ footer {
   }
 
   .success-tile {
-    width: 32.5%;
+    width: 32%;
   }
 
   .subpages a.subpage-tile {
-    width: 32.5%;
+    width: 32%;
   }
 
   .cta-buttons.flexxed {
@@ -2871,6 +2883,8 @@ footer {
   }
   .core-services .service-tile {
     margin: 0 0 30px 0;
+  }
+  .core-services .service-content {
     padding: 30px;
   }
 
@@ -2987,14 +3001,6 @@ footer {
   }
 
   .market-tile {
-    width: 24%;
-  }
-
-  .success-tile {
-    width: 24%;
-  }
-
-  .subpages a.subpage-tile {
     width: 24%;
   }
 

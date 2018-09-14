@@ -29,7 +29,7 @@
 						<?php the_field( 'introduction_content_text' ); ?>
 					</div>
 					<div class="intro-buttons flexxed">
-						<a class="btn btn-sm red-brdr" href="/contact">Contact us to learn more about <?php the_title(); ?></a>
+						<a class="btn btn-sm red-bg" href="/contact">Contact us to learn more about <?php the_title(); ?></a>
 					</div>
 				</div>
 			</div>
@@ -71,7 +71,7 @@
                         <div class="sub-heading"><?php the_field( 'success_story_sub_heading' ); ?></div>
                         <h2><?php the_field( 'success_story_title' ); ?></h2>
                         <div class="text"><?php the_field( 'success_story_snippet' ); ?></div>
-                        <a href="<?php the_field( 'success_story_link' ); ?>" class="btn btn-sm red-brdr"><?php the_field( 'success_story_link_text' ); ?> <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        <a href="<?php the_field( 'success_story_link' ); ?>" class="btn btn-sm red-bg"><?php the_field( 'success_story_link_text' ); ?> <i class="fa fa-angle-right" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </section>

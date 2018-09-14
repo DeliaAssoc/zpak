@@ -48,8 +48,7 @@
 					<?php endif; ?>
 
 					<div class="intro-buttons flexxed">
-						<a class="btn btn-sm red-bg" href="/contact">Request a Quote</a>
-						<a class="btn btn-sm mdgray-brdr" href="/contact">Contact Us for More Information</a>
+						<a class="btn btn-sm red-bg" href="/contact">Contact Us for More Information</a>
 					</div>
 				</div>
 			</div>

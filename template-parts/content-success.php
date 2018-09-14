@@ -31,8 +31,8 @@
                 <div class="sub-title"><?php the_field( 'cta_module_text', 'options' ); ?></div>
             </div>
             <div class="cta-buttons flexxed">
-                <a href="<?php the_field( 'cta_module_consultation_button_url', 'options' ); ?>" class="btn btn-md white-brdr"><i class="fa fa-envelope" aria-hidden="true"></i> <?php the_field( 'cta_module_consultation_button_text', 'options' ); ?></a>
-                <a href="tel:<?php echo get_theme_mod( 'theme_company_tollfree' ); ?>" class="btn btn-md white-brdr"><i class="fa fa-phone" aria-hidden="true"></i> <?php the_field( 'cta_module_contact_button_text', 'options' ); ?> <?php echo get_theme_mod( 'theme_company_tollfree' ); ?></a>
+                <a href="<?php the_field( 'cta_module_consultation_button_url', 'options' ); ?>" class="btn btn-md red-bg"><i class="fa fa-envelope" aria-hidden="true"></i> <?php the_field( 'cta_module_consultation_button_text', 'options' ); ?></a>
+                <a href="tel:<?php echo get_theme_mod( 'theme_company_tollfree' ); ?>" class="btn btn-md white-bg"><i class="fa fa-phone" aria-hidden="true"></i> <?php the_field( 'cta_module_contact_button_text', 'options' ); ?> <?php echo get_theme_mod( 'theme_company_tollfree' ); ?></a>
             </div>
         </div>
     </section>

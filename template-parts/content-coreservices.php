@@ -26,9 +26,8 @@
 				<div class="intro-text">
 					<?php the_field( 'introduction_text' ); ?>
 				</div>
-				<div class="cm-intro-btns flexxed">
-					<a href="<?php the_field( 'button_1_link' ); ?>" class="btn btn-sm red-bg"><?php the_field( 'button_1_text' ); ?></a>
-					<a href="<?php the_field( 'button_2_link' ); ?>" class="btn btn-sm mdgray-brdr"><?php the_field( 'button_2_text' ); ?></a>
+				<div class="cm-intro-btns">
+					<a href="<?php the_field( 'button_2_link' ); ?>" class="btn btn-sm red-bg"><?php the_field( 'button_2_text' ); ?></a>
 				</div>
             </div>
 
@@ -49,9 +48,11 @@
                                 <img src="<?php echo $icon[ 'url' ]; ?>" alt="<?php echo $icon[ 'alt' ]; ?>">
                             </div>
                             
-                            <h3 class="service-title dk-underlined"><?php the_sub_field( 'service_title' ); ?></h3>
-                            <div class="snippet"><?php the_sub_field( 'service_snippet' ); ?></div>
-                            <div class="btn btn-sm">Learn More <i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+                            <div class="service-content">
+								<h3 class="service-title"><?php the_sub_field( 'service_title' ); ?></h3>
+								<div class="snippet"><?php the_sub_field( 'service_snippet' ); ?></div>
+								<div class="btn btn-sm">Learn More <i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+							</div>
                         </a>
 					<?php endwhile; ?>
 				</div>

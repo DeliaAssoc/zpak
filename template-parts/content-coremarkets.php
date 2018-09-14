@@ -28,7 +28,7 @@
 				</div>
 				<div class="cm-intro-btns">
 
-					<a href="<?php the_field( 'core_markets_intro_button_1_link', 'options' ); ?>" class="btn btn-sm red-brdr"><?php the_field( 'core_markets_intro_button_1_text', 'options' ); ?></a>
+					<a href="<?php the_field( 'core_markets_intro_button_1_link', 'options' ); ?>" class="btn btn-sm red-bg"><?php the_field( 'core_markets_intro_button_1_text', 'options' ); ?></a>
 				</div>
             </div>
 

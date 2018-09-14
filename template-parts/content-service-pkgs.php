@@ -48,8 +48,7 @@
 					<?php endif; ?>
 
 					<div class="intro-buttons flexxed">
-						<a class="btn btn-sm red-bg" href="/contact">Request a Quote</a>
-						<a class="btn btn-sm mdgray-brdr" href="/contact">Contact Us for More Information</a>
+						<a class="btn btn-sm red-bg" href="/contact">Contact Us for More Information</a>
 					</div>
 				</div>
 			</div>
@@ -78,8 +77,7 @@
 									<h3 class="dk-underlined"><?php the_sub_field( 'package_name' ); ?></h3>
 									<div class="package-text"><?php the_sub_field( 'package_content' ); ?></div>
 									<div class="package-btns">
-										<a href="<?php the_sub_field( 'quote_button_link' ); ?>" class="btn btn-sm red-bg">Request a Quote <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-										<a href="<?php the_sub_field( 'learn_more_button_link' ); ?>" class="btn btn-sm white-brdr">Learn More <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+										<a href="<?php the_sub_field( 'learn_more_button_link' ); ?>" class="btn btn-sm red-bg">Learn More <i class="fa fa-angle-right" aria-hidden="true"></i></a>
 									</div>
 								</div>
 							</div>

@@ -29,7 +29,7 @@
 						<?php the_field( 'intro_section_content' ); ?>
 					</div>
 					<div class="intro-buttons">
-						<a class="btn btn-sm red-brdr" href="/contact">Contact us to learn More About <?php the_title(); ?></a>
+						<a class="btn btn-sm red-bg" href="/contact">Contact us to learn More About <?php the_title(); ?></a>
 					</div>
 				</div>
 			</div>
@@ -59,8 +59,22 @@
 				<?php endif; 
 
 			endwhile;
-
 		endif; ?>
+
+        <?php if ( get_field( 'success_story_title' ) ) : ?>
+            <section class="mp-successstory p60" style="background-image: url( '<?php the_field( 'success_story_background_image' ); ?>' );">
+                <div class="constrain flexxed">
+                    <?php $ssImage = get_field( 'success_story_image' ); ?>
+                    <img src="<?php echo $ssImage[ 'url' ]; ?>" alt="<?php echo $ssImage[ 'alt' ]; ?>" class="ss-image">
+                    <div class="mp-ss-content">
+                        <div class="sub-heading"><?php the_field( 'success_story_sub_heading' ); ?></div>
+                        <h2><?php the_field( 'success_story_title' ); ?></h2>
+                        <div class="text"><?php the_field( 'success_story_snippet' ); ?></div>
+                        <a href="<?php the_field( 'success_story_link' ); ?>" class="btn btn-sm red-bg"><?php the_field( 'success_story_link_text' ); ?> <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </section>
+        <?php endif; ?>
 
 		<?php if ( have_rows( 'quick_links_module', 'options' ) ) : ?>
 			<section class="quick-links flexxed">

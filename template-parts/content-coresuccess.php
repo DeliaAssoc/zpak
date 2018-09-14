@@ -28,7 +28,7 @@
 				</div>
 				<div class="cm-intro-btns">
 
-					<a href="<?php the_field( 'core_success_stories_button_1_link', 'options' ); ?>" class="btn btn-sm red-brdr"><?php the_field( 'core_success_stories_button_1_text', 'options' ); ?></a>
+					<a href="<?php the_field( 'core_success_stories_button_1_link', 'options' ); ?>" class="btn btn-sm red-bg"><?php the_field( 'core_success_stories_button_1_text', 'options' ); ?></a>
 				</div>
             </div>
 
@@ -43,7 +43,7 @@
 				<div class="constrain flexxed">
 					
 					<?php while ( have_rows( 'core_success_stories_stories', 'options' ) ) : the_row(); ?>
-						<a href="<?php the_sub_field( 'core_stories_story_link', 'options' ); ?>" class="success-tile">
+						<a href="<?php the_sub_field( 'core_stories_story_link', 'options' ); ?>" style="background-image: url( <?php the_sub_field( 'core_stories_background_image', 'options' ); ?> );" class="success-tile">
                             <?php if ( get_sub_field( 'core_stories_story_icon', 'options' ) ) : ?>
                                 <div class="success-icon">
                                     <?php $icon = get_sub_field( 'core_stories_story_icon', 'options' ); ?>

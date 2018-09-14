@@ -27,7 +27,7 @@
 					<?php the_field( 'introduction_text' ); ?>
 				</div>
 				<div class="cm-intro-btns">
-					<a href="<?php the_field( 'button_1_link' ); ?>" class="btn btn-sm red-brdr"><?php the_field( 'button_1_text' ); ?></a>
+					<a href="<?php the_field( 'button_1_link' ); ?>" class="btn btn-sm red-bg"><?php the_field( 'button_1_text' ); ?></a>
 				</div>
             </div>
 
@@ -42,7 +42,7 @@
 				<div class="constrain flexxed">
 					
 					<?php while ( have_rows( 'subpages' ) ) : the_row(); ?>
-                        <a href="<?php the_sub_field( 'subpage_link' ); ?>" class="subpage-tile">
+                        <a href="<?php the_sub_field( 'subpage_link' ); ?>" style="background-image: url( <?php the_sub_field( 'subpages_background_image', 'options' ); ?> );" class="subpage-tile">
                             <?php if ( get_sub_field( 'subpage_image' ) ) : ?>
                                 <div class="subpage-image">
                                     <?php $icon = get_sub_field( 'subpage_image' ); ?>
